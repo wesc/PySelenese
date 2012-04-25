@@ -63,6 +63,9 @@ class SeleniumMapper(object):
     def assertHtmlSource(self, args):
         self.test.assertEquals(self.sel.get_html_source(), args[0], args[2])
 
+    def assertText(self, args):
+        self.test.assertEquals(args[1], self.sel.get_text(args[0]))
+
     def assertTextNotPresent(self, args):
         self.test.assert_(not self.sel.is_text_present(args[0]), args[2])
 
